@@ -25,24 +25,23 @@ This project illustrates how to setup both Windows and Linux VMs in Azure. We wi
 <h2>Creating VMs</h2>
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/mG8G0lX.png" height="80%" width="80%" alt="Ubuntu Settings"/>
 </p>
 <p>
-1) Since the osTicket instance is going to be hosted on a VM, we'll start with that first. For all intents and purposes, this could be done on any VM manager, but in this case we'll use Azure's Virtual Machine
-  Service to host it. Start by going to "Virtual Machines" in your Azure dashboard and create an Windows 10 VM with version 21H2. The specs you pick are at your discretion. Remember to document the username and password you set during the creation process.
-</p>
-<br />
-
-<p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-</p>
-<p>
-2) Next, connect to the VM using Remote Desktop Connection (RDC). RDC using the search bar. Once it is open, enter the public IP address (pictured above, it will be different from mine) for the VM and enter the credentials. Keep in mind, if you are running Windows 10 Home on your host system, RDC will not be available for you. The only other option would be to upgrade to Windows 10/11 Pro or use third party software.
+1) For this project, we're going to need two Virtual Machines hosted on Azure. One running Windows 10 and one running ubuntu. 
 </p>
 <br />
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/jUfBh5B.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+2) 
+</p>
+<br />
+
+<p>
+<img src="https://i.imgur.com/JmOFhgw.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
 3) 
