@@ -45,7 +45,7 @@ This project illustrates how to setup both Windows and Linux VMs in Azure. We wi
 <br />
 
 <p>
-<img src="https://i.imgur.com/JmOFhgw.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/Sex0B8y.png" height="80%" width="80%" alt="Ubuntu Private IP"/>
 </p>
 <p>
 3) 
