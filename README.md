@@ -48,6 +48,6 @@ This project illustrates how to setup both Windows and Linux VMs in Azure. We wi
 <img src="https://i.imgur.com/Sex0B8y.png" height="80%" width="80%" alt="Ubuntu Private IP"/>
 </p>
 <p>
-3) 
+3) Once both VMs are created, go back to Virtual Machines and click on the Ubuntu VM. This will lead you a general information page for the VM. The thing we need to keep track of for the time being is the private IP address (marked above). Document it and now we are ready to proceed to the rest of the project.
 </p>
 <br />
