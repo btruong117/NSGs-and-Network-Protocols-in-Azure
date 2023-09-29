@@ -31,7 +31,7 @@ This project illustrates how to setup both Windows and Linux VMs in Azure. We wi
 1) This project assumes that you have already setup an Azure account. For this project, we're going to need two Virtual Machines hosted on Azure. One running Windows 10 and one running Ubuntu. On your Azure homepage select or search for "Virtual Machines". Once you enter the creation menu, we will start creating the Windows 10 VM. Give it a descriptive name and let Azure autocreate the resource group. Choose an available Region and Zone. Choose Windows 10 Pro for the Image. The size is at your discretion. Create and document login credentials as this will allow us to acces the VM via RDP. 
 </p>
 <br />
-<p>Proceed to the "networking" tab and ensure there is a vnet created. Azure should create a default vnet with 10.0.0.0/24. If the vnet is not automatically created or you would like to customize it, you can do so by going to "Create new" in "Virtual network" and can edit it to your liking. Once that is complete, click review + create in the bottom left. Once the process is validated, click create and wait for the Windows VM to finish deploying.</p>
+<p>Proceed to the "networking" tab and ensure there is a vnet created. Azure should create a default vnet with 10.0.0.0/24 like the one pictured above. If the vnet is not automatically created or you would like to customize it, you can do so by going to "Create new" in "Virtual network" and can edit it to your liking. Once that is complete, click review + create in the bottom left. Once the process is validated, click create and wait for the Windows VM to finish deploying.</p>
 <br />
 
 <p>
