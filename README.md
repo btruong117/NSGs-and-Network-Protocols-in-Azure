@@ -22,7 +22,7 @@ This project illustrates how to setup both Windows and Linux VMs in Azure. We wi
 - Ubuntu Server</b> 20.04 LTS
 
 
-<h2>Creating VMs</h2>
+<h2>Section 1: Creating VMs</h2>
 
 <p>
 <img src="https://i.imgur.com/71ZuF0b.png" height="80%" width="80%" alt="Vnet settings"/>
@@ -51,3 +51,12 @@ This project illustrates how to setup both Windows and Linux VMs in Azure. We wi
 3) Once both VMs are created, go back to Virtual Machines and click on the Ubuntu VM. This will lead you a general information page for the VM. The thing we need to keep track of for the time being is the private IP address (marked above). Document it and now we are ready to proceed to the rest of the project.
 </p>
 <br />
+
+<h2>Section 2: Connecting to the Windows Virtual Machine and Installing Wireshark</h2>
+
+<p>
+  <img src="https://i.imgur.com/x7dTRaG.png" height="80%" width="80%" alt = "RDP client">
+</p>
+<p>
+  1) We are now ready to connect to the windows VM. On our host computer, click the search bar and type "Remote Desktop Connection" and click the app. Once it is open, we should see a box that has "Computer name" with a text field next to it (pictured). Enter the public IP address of the Windows VM where the computer name text field is and click connect. The VMs public IP can be found in the Virtual Machines menu in Azure. It should be between the Size and Disks columns in the menu. Once you connect, enter the login credentials created in Section 1. If yellow warning box asks us to continue, click yes. The Remote desktop service will then take up our screen and we will see a new windows desktop appear shortly. **Note: There can be a few issues that can prevent an RDP connection from happening. These will be addressed at the end in the troubleshooting section.
+</p>
