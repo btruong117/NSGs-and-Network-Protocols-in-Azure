@@ -66,7 +66,7 @@ This project illustrates how to setup both Windows and Linux VMs in Azure. We wi
 <p>If a yellow warning box asks you to continue, click yes. The Remote desktop service will then take up our screen and we will see a new windows desktop appear shortly. **Note: There can be a few issues that can prevent an RDP connection from happening. These will be addressed at the end in the troubleshooting section.**</p>
 
 <br />
-<p><img src="https://i.imgur.com/aI0ONYd.png" height="60%" wdith="60%" alt = "Wireshark Main Screen"></p>
+<p><img src="https://i.imgur.com/aI0ONYd.png" height="45%" wdith="60%" alt = "Wireshark Main Screen"></p>
 <p>
   2) Once we reach the Windows desktop, we'll need to install Wireshark to analyze network traffic. Open Microsoft edge on the desktop and go to <a href="https://www.wireshark.org/">here</a>. Choose the Windows x64 installer and download it. Once downloaded, double click the installer and follow the deafult options for everything. Once the installation is completed, it will either auto launch or we can go to the search bar and search for Wireshark. It should show the following(Pictured above). Click the ethernet section on the main screen and we can proceed to the next section.
 </p>
