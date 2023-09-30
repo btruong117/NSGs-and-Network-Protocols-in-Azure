@@ -68,5 +68,5 @@ This project illustrates how to setup both Windows and Linux VMs in Azure. We wi
 <br />
 <p><img src="https://i.imgur.com/aI0ONYd.png" height="60%" wdith="60%" alt = "Wireshark Main Screen"></p>
 <p>
-  2) Once we reach the Windows desktop, we'll need to install Wireshark to analyze network traffic. Open Microsoft edge on the desktop and go to <a href = "https://www.wireshark.org/">. Choose the Windows x64 installer and download it. Once downloaded, double click the installer and follow the deafult options for everything. Once the installation is completed, it will either auto launch or we can go to the search bar and search for Wireshark. It should show the following(Pictured above). Click the ethernet section on the main screen and we can proceed to the next section.
+  2) Once we reach the Windows desktop, we'll need to install Wireshark to analyze network traffic. Open Microsoft edge on the desktop and go to [here](https://www.wireshark.org/). Choose the Windows x64 installer and download it. Once downloaded, double click the installer and follow the deafult options for everything. Once the installation is completed, it will either auto launch or we can go to the search bar and search for Wireshark. It should show the following(Pictured above). Click the ethernet section on the main screen and we can proceed to the next section.
 </p>
