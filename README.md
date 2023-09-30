@@ -72,3 +72,13 @@ This project illustrates how to setup both Windows and Linux VMs in Azure. We wi
 </p>
 <h2>Section 3: Creating and Analyzing Network Traffic</h2>
 <br />
+
+<p>
+  <img src="https://i.imgur.com/bJI9QXM.png" height="80%" width="80%" alt="ICMP Traffic">
+</p>
+
+<p>
+  1) The first type of traffic we are going to analyze is from the Internet Control Message Protocol(ICMP). This protocol is used to facilitate troubleshooting and diagnostic tools for network connectivity such the ping command. For this lab, open the windows command line and type ping (your Ubuntu VM's private IP) -t. The ping command sends ICMP packets to the target device. If the target device receives and replies back to the pinging machine, then we have network connectivity between the two devices. In this case, we are pinging from the Windows VM to the Ubuntu VM to see if the two are connected to each other. Normally, ping will send out 4 ICMP packets. However, we are using the -t flag which will create an endless ping.
+</p>
+<br />
+<p>If you've opened up the ethernet capture in Wireshark, you should see a wide variety of different packets going through. Since we are only trying to observe ICMP traffic, we'll need to filter the traffic. Like the image above, type icmp in to the search bar near the top of the screen and press enter. Now, we will only see ICMP traffic between the two VMs. Notice how each line in the capture is </p>
