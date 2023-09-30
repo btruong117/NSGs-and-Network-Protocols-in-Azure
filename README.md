@@ -15,6 +15,7 @@ This project illustrates how to setup both Windows and Linux VMs in Azure. We wi
 - Microsoft Azure (Virtual Machines)
 - Remote Desktop
 - Wireshark
+- Linux Commands
 
 <h2>Operating Systems Used </h2>
 
@@ -99,3 +100,22 @@ The first type of traffic we are going to analyze is from the Internet Control M
 <p>Click add and the rule should start taking effect. It may take a bit of time for the rule to go through, but when it does, you will see the perpetual ping we set up earlier show "request timed out" in the terminal. In Wireshark, you should see traffic where it is only the Windows VM requesting ICMP traffic to the Ubuntu VM with "no response found!" at the end of the line.</p>
  <p><img src="https://i.imgur.com/K9j9Qvn.png" height="70%" width="70%"></p>
  <p>If you would like to allow ping traffic again, you'll need to delete the rule. Simply, navigate back to Network Security Groups -> (Your Ubuntu VM name)-nsg > Inbound Rules and click the trash can button shown in the related image.</p>
+
+<br />
+<h3>Analyze SSH traffic</h3>
+<p><img src="https://i.imgur.com/d5kPpvC.png" height="80%" width="80%"></p>
+<p>We will now analyze Secure Shell(SSH) traffic. SSH is protocol that allows for secure remote acess to a device's command line interface on a network. Traditionally this is used to connect to Linux using devices as it is supported natively. However, with external tools you can setup an ssh server on a Windows machine to allow for ssh connection. For this project, we will stick to the Ubuntu VM we've created. If you haven't already, clear the icmp filter from the bar in Wireshark and type either ssh or tcp.port == 22. The second option is the port number and protocol for ssh and isgood to know if you are looking to get into a career in IT. Once Wireshark is set to filter for SSH traffic, establish an SSH connection between the Windows and Ubuntu VM by typing "ssh (username for your Ubuntu VM)@(Ubuntu VM Private IP address)" in the command line and press enter. If you're asked to continue, type yes and enter the password for Ubuntu VM.</p>
+<br />
+<p><img src="https://i.imgur.com/uRPbJWK.png" height="80%" width="80%"</p>
+<p>If the connection is successful, you should see a new console appear with a new line along the lines of "(Your Ubuntu username)@UbuntuClient~:". To create SSH traffic, you will need to type commands in the terminal. The picture above gives some suggestions for what commands to use however there are plenty more to use which can be found online. Here is an explanation of the ones used for this project:
+</p>
+<ul>
+  <li>ls -> lists directories where the user currently is</li>
+  <li>pwd -> "Print Working Directory" displays the directory path of the current location</li>
+  <li>mkdir -> Creates a new directory at a given location</li>
+  <li>whoami -> Displays the name of the current user</li>
+  <li>cd -> Changes directory to given one</li>
+  <li>touch -> Creates a file at the given location</li>
+  <li>nano -> In built Linux text editor</li>
+</ul>
+<p>The more commands you enter into the terminal, the more traffic can be seen in the Wireshark capture. Once you are done experimenting, you can end the ssh connection by typing exit.</p>
