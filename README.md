@@ -97,3 +97,5 @@ The first type of traffic we are going to analyze is from the Internet Control M
   <img src="https://i.imgur.com/47Z60ee.png" height="80%" width="80%">
 </p>
 <p>Click add and the rule should start taking effect. It may take a bit of time for the rule to go through, but when it does, you will see the perpetual ping we set up earlier show "request timed out" in the terminal. In Wireshark, you should see traffic where it is only the Windows VM requesting ICMP traffic to the Ubuntu VM with "no response found!" at the end of the line.</p>
+ <p><img src="https://i.imgur.com/K9j9Qvn.png" height="55%" width="55%"></p>
+ <p>If you would like to allow ping traffic again, you'll need to delete the rule. Simply, navigate back to Network Security Groups -> (Your Ubuntu VM name)-nsg > Inbound Rules and click the trash can button shown in the related image.</p>
