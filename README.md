@@ -82,3 +82,7 @@ This project illustrates how to setup both Windows and Linux VMs in Azure. We wi
 </p>
 <br />
 <p>If you've opened up the ethernet capture in Wireshark, you should see a wide variety of different packets going through. Since we are only trying to observe ICMP traffic, we'll need to filter the traffic. Like the image above, type icmp in to the search bar near the top of the screen and press enter. Now, we will only see ICMP traffic between the two VMs. Notice how each line in the capture is a request from the Windows source IP to the Ubuntu Destination IP and alternates to a reply from the Ubuntu source IP to the Windows destination IP.</p>
+<p>
+  <img src="https://i.imgur.com/AKbGjk4.png" height="80%" width="80%">
+</p>
+<p>Ping is not restricted to just devices on your private network and can allow you to ping devices or entities on the internet. This can be helpful if you have connectivity between devices on your Local Area Network(LAN) but not to the internet. In the image, we've pinged 8.8.8.8 which is the public Google Domain Name System(DNS) server. Notice how we have the same request and reply back and forth.</p>
