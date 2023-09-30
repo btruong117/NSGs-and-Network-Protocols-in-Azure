@@ -73,12 +73,13 @@ This project illustrates how to setup both Windows and Linux VMs in Azure. We wi
 <h2>Section 3: Creating and Analyzing Network Traffic</h2>
 <br />
 
+<h3>ICMP Traffic</h3>
 <p>
   <img src="https://i.imgur.com/bJI9QXM.png" height="80%" width="80%" alt="ICMP Traffic">
 </p>
 
 <p>
-  1) The first type of traffic we are going to analyze is from the Internet Control Message Protocol(ICMP). This protocol is used to facilitate troubleshooting and diagnostic tools for network connectivity such the ping command. For this lab, open the windows command line and type ping (your Ubuntu VM's private IP) -t. The ping command sends ICMP packets to the target device. If the target device receives and replies back to the pinging machine, then we have network connectivity between the two devices. In this case, we are pinging from the Windows VM to the Ubuntu VM to see if the two are connected to each other. Normally, ping will send out 4 ICMP packets. However, we are using the -t flag which will create an endless ping.
+The first type of traffic we are going to analyze is from the Internet Control Message Protocol(ICMP). This protocol is used to facilitate troubleshooting and diagnostic tools for network connectivity such the ping command. For this lab, open the windows command line and type ping (your Ubuntu VM's private IP) -t. The ping command sends ICMP packets to the target device. If the target device receives and replies back to the pinging machine, then we have network connectivity between the two devices. In this case, we are pinging from the Windows VM to the Ubuntu VM to see if the two are connected to each other. Normally, ping will send out 4 ICMP packets. However, we are using the -t flag which will create an endless ping.
 </p>
 <br />
 <p>If you've opened up the ethernet capture in Wireshark, you should see a wide variety of different packets going through. Since we are only trying to observe ICMP traffic, we'll need to filter the traffic. Like the image above, type icmp in to the search bar near the top of the screen and press enter. Now, we will only see ICMP traffic between the two VMs. Notice how each line in the capture is a request from the Windows source IP to the Ubuntu Destination IP and alternates to a reply from the Ubuntu source IP to the Windows destination IP.</p>
@@ -88,5 +89,11 @@ This project illustrates how to setup both Windows and Linux VMs in Azure. We wi
 <p>Ping is not restricted to just devices on your private network and can allow you to ping devices or entities on the internet. This can be helpful if you have connectivity between devices on your Local Area Network(LAN) but not to the internet. In the image, we've pinged 8.8.8.8 which is the public Google Domain Name System(DNS) server. Notice how we have the same request and reply back and forth. **Note: To end any command that doesn't stop in the command line, click inside the cmd window and do ctrl+c.**</p>
 
 <br />
+<h3>Network Security Groups and Rules</h3>
 <p><img src="https://i.imgur.com/dgq0q0I.png" height="80%" width="80%"></p>
-<p>2) We are now going to going to experiment with Network Security Groups within Azure. We are going to implement an inbound security rule which will block ICMP traffic. Navigate to the Azure search bar and type "Network Security Groups". Once you open that menu, click on (Name of your Ubuntu VM)-nsg -> Inbound Rules -> Add. When the side menu opens up, select ICMP as the protocol, Deny as the Type, Priority to some value less than 300, and give it a descriptive name. The goal of this rule is to block ping from reaching the Ubuntu VM. Setting the priority to less than 300 will make it the first rule to be processed by the VM since the next lowest is the SSH rule(Picture as reference).</p>
+<p> We are now going to going to experiment with Network Security Groups within Azure. We are going to implement an inbound security rule which will block ICMP traffic. Navigate to the Azure search bar and type "Network Security Groups". Once you open that menu, click on (Name of your Ubuntu VM)-nsg -> Inbound Rules -> Add. When the side menu opens up, select ICMP as the protocol, Deny as the Type, Priority to some value less than 300, and give it a descriptive name. The goal of this rule is to block ping from reaching the Ubuntu VM. Setting the priority to less than 300 will make it the first rule to be processed by the VM since the next lowest is the SSH rule(Picture as reference).</p>
+
+<p>
+  <img src="https://i.imgur.com/47Z60ee.png" height="80%" width="80%">
+</p>
+<p>Click add and the rule should start taking effect. It may take a bit of time for the rule to go through, but when it does, you will see the perpetual ping we set up earlier show "request timed out" in the terminal. In Wireshark, you should see traffic where it is only the Windows VM requesting ICMP traffic to the Ubuntu VM with "no response found!" at the end of the line.</p>
