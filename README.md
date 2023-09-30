@@ -85,4 +85,8 @@ This project illustrates how to setup both Windows and Linux VMs in Azure. We wi
 <p>
   <img src="https://i.imgur.com/AKbGjk4.png" height="80%" width="80%">
 </p>
-<p>Ping is not restricted to just devices on your private network and can allow you to ping devices or entities on the internet. This can be helpful if you have connectivity between devices on your Local Area Network(LAN) but not to the internet. In the image, we've pinged 8.8.8.8 which is the public Google Domain Name System(DNS) server. Notice how we have the same request and reply back and forth.</p>
+<p>Ping is not restricted to just devices on your private network and can allow you to ping devices or entities on the internet. This can be helpful if you have connectivity between devices on your Local Area Network(LAN) but not to the internet. In the image, we've pinged 8.8.8.8 which is the public Google Domain Name System(DNS) server. Notice how we have the same request and reply back and forth. **Note: To end any command that doesn't stop in the command line, click inside the cmd window and do ctrl+c.**</p>
+
+<br />
+<p><img src=""></p>
+<p>2) We are now going to going to experiment with Network Security Groups within Azure. We are going to implement an inbound security rule which will block ICMP traffic.</p>
