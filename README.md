@@ -24,7 +24,8 @@ This project illustrates how to setup both Windows and Linux VMs in Azure. We wi
 
 
 <h2>Section 1: Creating VMs</h2>
-
+<p>***NOTE: If you need to take a break from doing this lab or cannot finish it in a single sitting, don't leave them running and stop then when not in use. To stop a VM go to -> Virtual Machines -> Click the check next to the name of the VM -> Click stop. Once the VM is done stopping, refresh the page and verify that its status is "Stopped(deallocated). This means that the it is not currently running and charging you and its resources are not currently used on your VM.***</p>
+<br />
 <p>
 <img src="https://i.imgur.com/71ZuF0b.png" height="80%" width="80%" alt="Vnet settings"/>
 </p>
@@ -130,3 +131,12 @@ The first type of traffic we are going to analyze is from the Internet Control M
 <br />
 <p><img src="https://i.imgur.com/tIBJrCQ.png" height="80%" width="80%"></p>
 <p>Up next is Domain Name System(DNS). DNS is used to assign a human readable name to an IP address. It is essential to use since it is very difficult to remember and associate something like 192.168.1.100 to my computer. "Brian's Computer" on the otherhand is much easier to remember and still refers to the IP address when using DNS. To filter for DNS, type dns or udp.port == 53 in the filter bar. To generate the traffic, we will use the nslookup command. nslookup is used to find the IP address for a given name or the reverse. For example, we are using nslookup on www.google.com and it returns multiple IP addresses. In Wireshark, you should notic some more traffic being displayed and things like "A", "AAAA", or "PTR" being displayed in the info column. These are known as DNS records and are what gives DNS its ability to give names to IP addresses. A records store the relationship between and IP address. A records a queried when you have an name and need its IPv4 address. AAAA is the same but applies to IPv6 addresses. PTR records are the opposite, they are queried when an IP address is known and the name needs to be found.</p>
+<br />
+
+<h3>Analyze RDP Traffic</h3>
+<p><img src="https://i.imgur.com/yECgrEh.png" height="80%" wdith="80%"</p>
+<p>Finally, we will be observing RDP traffic. All we have to do, is filter for RDP traffic using tcp.port == 3389 in the filter bar. Notice how the capture is a constant stream of data. Since the VM is being constantly controlled by our host computer using the Remote Desktop Connection app, it is constantly receiving and sending traffic to maintain a steady and accurate connection.</p>
+<br />
+
+<h3>Cleaning up the Project</h3>
+<p>If you would like to keep this setup of VMs to continue experimentation then you are more than welcome to. Be warned that regardless of if you are using free Azure credits or using pay-as-you-go, the VMs will charge money even if they are not currently running, though this amount is typically not too expensive. If you no longer want to get charged and are done with this lab, you can delete both the VMs and resource group. To delete the VMs go to Virtual Machines -> Click the check box next to the name of the VM -> Click delete in the top center tab and follow the instructions. For the resource group, go to Resource Groups -> Click the name of the resource group -> Click Delete resource group -> follow the instructions. Make sure to delete both the resource group that contains the VMs and the NetworkWatchergroup as well.</p>
