@@ -74,7 +74,7 @@ This project illustrates how to setup both Windows and Linux VMs in Azure. We wi
 <h2>Section 3: Creating and Analyzing Network Traffic</h2>
 <br />
 
-<h3>ICMP Traffic</h3>
+<h3>Analyze ICMP Traffic</h3>
 <p>
   <img src="https://i.imgur.com/bJI9QXM.png" height="80%" width="80%" alt="ICMP Traffic">
 </p>
@@ -102,7 +102,7 @@ The first type of traffic we are going to analyze is from the Internet Control M
  <p>If you would like to allow ping traffic again, you'll need to delete the rule. Simply, navigate back to Network Security Groups -> (Your Ubuntu VM name)-nsg > Inbound Rules and click the trash can button shown in the related image.</p>
 
 <br />
-<h3>Analyze SSH traffic</h3>
+<h3>Analyze SSH Traffic</h3>
 <p><img src="https://i.imgur.com/d5kPpvC.png" height="80%" width="80%"></p>
 <p>We will now analyze Secure Shell(SSH) traffic. SSH is protocol that allows for secure remote acess to a device's command line interface on a network. Traditionally this is used to connect to Linux using devices as it is supported natively. However, with external tools you can setup an ssh server on a Windows machine to allow for ssh connection. For this project, we will stick to the Ubuntu VM we've created. If you haven't already, clear the icmp filter from the bar in Wireshark and type either ssh or tcp.port == 22. The second option is the port number and protocol for ssh and isgood to know if you are looking to get into a career in IT. Once Wireshark is set to filter for SSH traffic, establish an SSH connection between the Windows and Ubuntu VM by typing "ssh (username for your Ubuntu VM)@(Ubuntu VM Private IP address)" in the command line and press enter. If you're asked to continue, type yes and enter the password for Ubuntu VM.</p>
 <br />
@@ -121,6 +121,12 @@ The first type of traffic we are going to analyze is from the Internet Control M
 <p>The more commands you enter into the terminal, the more traffic can be seen in the Wireshark capture. Notice how you only see new traffic when you enter input into the terminal. It is not a constant stream of information. Once you are done experimenting, you can end the ssh connection by typing exit.</p>
 <br />
 
-<h3>Analyze DHCP traffic</h3>
+<h3>Analyze DHCP Traffic</h3>
 <p><img src="https://i.imgur.com/3vdq4fN.png" height="80%" width="80%"></p>
 <p>Next, we will be observing Dyniamic Host Configuration Protocol(DHCP) traffic. DHCP is used to dynamically assign IP addresses to devices within a network. This process is typically done by a router or dedicated DHCP server in an enterprise environment. Our Windows VM is currently getting its IP from Azure itself on our vnet. DHCP traffic can be generated when the DHCP server renews the IP address for a device, which is typically done after a certain lease period. We can manually do this by using the command "ipconfig /renew" in command line. This will instantly release and reassign a new ip address for the VM. To capture the DHCP traffic, filter by using dhcp or udp.port == 67 || udp.port == 68 in the filter bar. Notice how in the output, our source (Windows VM) is making a request to the Azure DHCP service and it Ackknowledges back with a new ip. This is why we are filtering with both port 67 and 68 as this represents traffic from the client making the request and the server responding respectively. </p>
+<br />
+<!-- Come back to this one to give a better explanation for google DNS IPs --->
+<h3>Analyze DNS Traffic</h3>
+<br />
+<p><img src="https://i.imgur.com/tIBJrCQ.png" height="80%" width="80%"></p>
+<p>Up next is Domain Name System(DNS). DNS is used to assign a human readable name to an IP address. It is essential to use since it is very difficult to remember and associate something like 192.168.1.100 to my computer. "Brian's Computer" on the otherhand is much easier to remember and still refers to the IP address when using DNS. To filter for DNS, type dns or udp.port == 53 in the filter bar. To generate the traffic, we will use the nslookup command. nslookup is used to find the IP address for a given name or the reverse. For example, we are using nslookup on www.google.com and it returns multiple IP addresses. In Wireshark, you should notic some more traffic being displayed and things like "A", "AAAA", or "PTR" being displayed in the info column. These are known as DNS records and are what gives DNS its ability to give names to IP addresses. A records store the relationship between and IP address. A records a queried when you have an name and need its IPv4 address. AAAA is the same but applies to IPv6 addresses. PTR records are the opposite, they are queried when an IP address is known and the name needs to be found.</p>
