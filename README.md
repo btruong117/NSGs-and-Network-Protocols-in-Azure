@@ -119,3 +119,6 @@ The first type of traffic we are going to analyze is from the Internet Control M
   <li>nano -> In built Linux text editor</li>
 </ul>
 <p>The more commands you enter into the terminal, the more traffic can be seen in the Wireshark capture. Notice how you only see new traffic when you enter input into the terminal. It is not a constant stream of information. Once you are done experimenting, you can end the ssh connection by typing exit.</p>
+<br />
+
+<h3>Analyze DHCP traffic</h3>
