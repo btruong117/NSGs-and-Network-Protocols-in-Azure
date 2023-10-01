@@ -140,3 +140,15 @@ The first type of traffic we are going to analyze is from the Internet Control M
 
 <h3>Cleaning up the Project</h3>
 <p>If you would like to keep this setup of VMs to continue experimentation then you are more than welcome to. Be warned that regardless of if you are using free Azure credits or using pay-as-you-go, the VMs will charge money even if they are not currently running, though this amount is typically not too expensive. If you no longer want to get charged and are done with this lab, you can delete both the VMs and resource group. To delete the VMs go to Virtual Machines -> Click the check box next to the name of the VM -> Click delete in the top center tab and follow the instructions. For the resource group, go to Resource Groups -> Click the name of the resource group -> Click Delete resource group -> follow the instructions. Make sure to delete both the resource group that contains the VMs and the NetworkWatchergroup as well.</p>
+<br />
+<h3>Troubleshooting common issues</h3>
+<p><ol>
+  <li>I can't find the resource group or Vnet I just made when making the Ubuntu VM -> </li>
+    <ul>
+      <li>Make sure that you wait until the Windows VM is fully deployed. To check, go to Virtual machines and see if the status of the VM is "running".</li>
+    </ul>
+  <li>I can't connect to the Windows VM via RDP</li>
+  <ul>
+    <li>Make sure that Remote Desktop Connection is allowed on your computer. Ensure that you are using the public IP address of the Windows VM to connect. If it is automatically asking for login credentials, say something that mentions your microsoft account, click more choices underneath the login dialogue and enter the right credentials.</li>
+  </ul>
+</ol></p>
