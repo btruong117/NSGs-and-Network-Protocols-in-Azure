@@ -151,4 +151,12 @@ The first type of traffic we are going to analyze is from the Internet Control M
   <ul>
     <li>Make sure that Remote Desktop Connection is allowed on your computer. Ensure that you are using the public IP address of the Windows VM to connect. If it is automatically asking for login credentials, say something that mentions your microsoft account, click more choices underneath the login dialogue and enter the right credentials.</li>
   </ul>
+  <li>I can't ping the Ubuntu VM even with no rule enabled.</li>
+  <ul>
+    <li>Double check if the VMs are on the same vnet. If they aren't, then you'll have to delete and restart the lab. </li>
+  </ul>
+  <li>Wireshark has isn't capturing anything.</li>
+  <ul>
+    <li>Restart the Wireshark capture or close and reopen Wireshark.</li>
+  </ul>
 </ol></p>
