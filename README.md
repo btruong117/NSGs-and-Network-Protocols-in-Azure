@@ -60,7 +60,7 @@ This project illustrates how to setup both Windows and Linux VMs in Azure. We wi
   <img src="https://i.imgur.com/x7dTRaG.png" height="60%" width="60%" alt = "RDP client">
 </p>
 <p>
-  1) We are now ready to connect to the windows VM. On your host computer, click the search bar and type "Remote Desktop Connection" and click the app. Once it is open, we should see a box that has "Computer name" with a text field next to it (pictured). Enter the public IP address of the Windows VM where the computer name text field is and click connect. The VMs public IP can be found in the Virtual Machines menu in Azure. It should be between the Size and Disks columns in the menu. Once you connect, enter the login credentials created in Section 1. 
+  1) We are now ready to connect to the windows VM. On your host computer, click the search bar and type "Remote Desktop Connection" (RDC) and click the app. Once it is open, we should see a box that has "Computer name" with a text field next to it (pictured). Enter the public IP address of the Windows VM where the computer name text field is and click connect. The VMs public IP can be found in the Virtual Machines menu in Azure. It should be between the Size and Disks columns in the menu. Once you connect, enter the login credentials created in Section 1. Keep in mind, if you are running Windows 10 Home on your host system, RDC will not be available for you. The only other option would be to upgrade to Windows 10/11 Pro or use third party software.
 </p>
 
 <p><img src="https://i.imgur.com/uFkeEuV.png" height="60%" width="60%" alt="Certifcate warning"></p>
